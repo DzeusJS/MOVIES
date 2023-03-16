@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using MOVIES.DATA;
+using MOVIES.DATA.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +11,8 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 options.UseSqlServer(
     builder.Configuration.GetConnectionString("DefaultConnectionString"
 )));
+//Services configuration
+builder.Services.AddScoped<IActorsService, ActorsService>();
 
 builder.Services.AddControllersWithViews();
 

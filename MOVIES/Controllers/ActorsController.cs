@@ -1,21 +1,28 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MOVIES.DATA;
+using MOVIES.DATA.Services;
 
 namespace MOVIES.Controllers
 {
     public class ActorsController : Controller
     {
-        private readonly AppDbContext _context;
-        public ActorsController(AppDbContext context)
+        private readonly IActorsService _service;
+        public ActorsController(IActorsService service)
         {
-            _context = context;
+            _service = service;
         }
 
         public IActionResult Index()
         {
-            var data = _context.Actors.ToList();
+            var data = _service.GetAllActors();
 
             return View(data);
+        }
+
+        // Actors/Create
+        public IActionResult Create()
+        {
+            return View();
         }
     }
 }
