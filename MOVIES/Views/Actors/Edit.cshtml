@@ -8,12 +8,12 @@
 	<div class="col-md-8 offset-2">
 		<p>
 			<h1>
-				Add a New Actor
+				Update actor
 			</h1>
 		</p>
 		<div class="row">
 			<div class="col-md-8 offset-2">
-				<form asp-action="Create">
+				<form asp-action="Edit">
 					<div asp-validation-summary="ModelOnly"
 					class="text-danger"></div>
 
@@ -37,7 +37,7 @@
 						<span asp-validation-for="Bio" class="text-danger"></span>
 					</div>
 					<div class="mb-3">
-						<input type="submit" value="Create" class="btn btn-outline-success float-end" />
+						<input type="submit" value="Update" class="btn btn-outline-success float-end" />
 						<a class="btn btn-outline-secondary" asp-action="Index">Show All</a>
 					</div>
 
