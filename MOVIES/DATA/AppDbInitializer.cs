@@ -11,9 +11,10 @@ namespace MOVIES.DATA
             {
                 var context = serviceScope.ServiceProvider.GetService<AppDbContext>();
                 context.Database.EnsureCreated();
-
-                //Cinema
-                if(!context.Cinemas.Any())
+				//Actors and movies
+				
+				//Cinema
+				if (!context.Cinemas.Any())
                 {
                     context.Cinemas.AddRange(new List<Cinema>()
                     {

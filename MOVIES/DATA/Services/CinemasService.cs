@@ -4,10 +4,10 @@ using MOVIES.Models;
 
 namespace MOVIES.DATA.Services
 {
-    public class ActorService : EntityBaseRepository<Actor>, IActorsService
+    public class CinemasService : EntityBaseRepository<Cinema>, ICinemasService
     {
         private readonly AppDbContext _context;
-        public ActorService(AppDbContext context) :base(context) { }
+        public CinemasService(AppDbContext context) :base(context) { }
        
 
     }

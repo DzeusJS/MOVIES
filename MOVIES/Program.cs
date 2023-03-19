@@ -12,8 +12,9 @@ options.UseSqlServer(
     builder.Configuration.GetConnectionString("DefaultConnectionString"
 )));
 //Services configuration
-builder.Services.AddScoped<IActorsService, ActorsService>();
-
+builder.Services.AddScoped<IActorsService, ActorService>();
+builder.Services.AddScoped<IProducersService, ProducersService>();
+builder.Services.AddScoped<ICinemasService, CinemasService>();
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
